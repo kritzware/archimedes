@@ -1,6 +1,6 @@
 #include <string>
 
-typedef int TokenType;
+typedef std::string TokenType;
 
 struct Token
 {
@@ -8,17 +8,17 @@ struct Token
   char literal;
 };
 
-const int TOK_ILLEGAL = -1;
-const int TOK_EOF = -2;
+const std::string TOK_ILLEGAL = "TOK_ILLEGAL";
+const std::string TOK_EOF = "TOK_EOF";
 
-const int TOK_IDENT = -3;
-const int TOK_INT = -4;
+const std::string TOK_IDENT = "TOK_IDENT";
+const std::string TOK_INT = "TOK_INT";
 
-const int TOK_ASSIGN = -5;
-const int TOK_PLUS = -6;
+const std::string TOK_ASSIGN = "TOK_ASSIGN";
+const std::string TOK_PLUS = "TOK_PLUS";
 
-const int TOK_COMMA = -7;
-const int TOK_SEMICOLON = -8;
+const std::string TOK_COMMA = "TOK_COMMA";
+const std::string TOK_SEMICOLON = "TOK_SEMICOLON";
 
-const int TOK_FUNCTION = -9;
-const int TOK_LET = -10;
+const std::string TOK_FUNCTION = "TOK_FUNCTION";
+const std::string TOK_LET = "TOK_LET";
