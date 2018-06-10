@@ -1,4 +1,5 @@
 #include <string>
+#include <map>
 
 typedef std::string TokenType;
 
@@ -22,3 +23,7 @@ const std::string TOK_SEMICOLON = "TOK_SEMICOLON";
 
 const std::string TOK_FUNCTION = "TOK_FUNCTION";
 const std::string TOK_LET = "TOK_LET";
+
+const std::map<std::string, TokenType> keywords = {
+    {"fn", TOK_FUNCTION},
+    {"let", TOK_LET}};

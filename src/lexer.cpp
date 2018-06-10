@@ -29,9 +29,24 @@ void Lexer::readChar()
   readPosition += 1;
 }
 
+void Lexer::skipWhitespace()
+{
+  // do
+  // {
+  //   readChar();
+  // } while (ch == ' ' || ch == '\t' || ch == '\n' || ch == '\r');
+
+  if (ch == ' ' || ch == '\t' || ch == '\n' || ch == '\r')
+  {
+    readChar();
+  }
+}
+
 Token Lexer::nextToken()
 {
   Token tok;
+
+  skipWhitespace();
 
   switch (ch)
   {
@@ -49,6 +64,14 @@ Token Lexer::nextToken()
     break;
   case 0:
     tok = newToken(TOK_EOF, 0);
+  default:
+    if (isalpha(ch))
+    {
+    }
+    else
+    {
+      tok = newToken(TOK_ILLEGAL, ch);
+    }
   }
 
   readChar();

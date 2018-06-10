@@ -10,5 +10,6 @@ class Lexer
 public:
   Lexer(std::string input);
   void readChar();
+  void skipWhitespace();
   Token nextToken();
 };

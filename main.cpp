@@ -7,8 +7,10 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
 
-  string input = "=+,;";
+  string input = "= + ,;;";
   Lexer lexer(input);
+
+  cout << "source length: " << input.length() << endl;
 
   for (unsigned int i = 0; i < input.length(); i++)
   {
