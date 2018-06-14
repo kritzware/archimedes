@@ -62,8 +62,12 @@ Token Lexer::nextToken()
   case '+':
     tok = newToken(TOK_PLUS, ch);
     break;
+  case '-':
+    tok = newToken(TOK_MINUS, ch);
+    break;
   case 0:
     tok = newToken(TOK_EOF, 0);
+    break;
   default:
     if (isalpha(ch))
     {

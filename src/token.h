@@ -17,6 +17,7 @@ const std::string TOK_INT = "TOK_INT";
 
 const std::string TOK_ASSIGN = "TOK_ASSIGN";
 const std::string TOK_PLUS = "TOK_PLUS";
+const std::string TOK_MINUS = "TOK_MINUS";
 
 const std::string TOK_COMMA = "TOK_COMMA";
 const std::string TOK_SEMICOLON = "TOK_SEMICOLON";
