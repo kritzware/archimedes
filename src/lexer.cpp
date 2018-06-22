@@ -71,6 +71,16 @@ Token Lexer::nextToken()
   default:
     if (isalpha(ch))
     {
+      std::string ident = readIdentifier();
+      tok.literal_str = ident;
+      tok.type = lookupIdent(ident);
+      return tok;
+    }
+    else if (isdigit(ch))
+    {
+      tok.type = TOK_INT;
+      tok.literal_str = readNumber();
+      return tok;
     }
     else
     {
@@ -80,4 +90,36 @@ Token Lexer::nextToken()
 
   readChar();
   return tok;
+}
+
+/* read identifier */
+std::string Lexer::readIdentifier()
+{
+  int _position = position;
+  while (isalpha(ch))
+  {
+    readChar();
+  }
+  return input.substr(_position, position);
+}
+
+/* read integer */
+std::string Lexer::readNumber()
+{
+  int _position = position;
+  while (isdigit(ch))
+  {
+    readChar();
+  }
+  return input.substr(_position, position);
+}
+
+/* check if ident is keyword */
+TokenType Lexer::lookupIdent(std::string ident)
+{
+  if (keywords.count(ident) > 0)
+  {
+    return keywords.at(ident);
+  }
+  return TOK_IDENT;
 }

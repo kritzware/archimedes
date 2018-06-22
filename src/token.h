@@ -7,6 +7,7 @@ struct Token
 {
   TokenType type;
   char literal;
+  std::string literal_str;
 };
 
 const std::string TOK_ILLEGAL = "TOK_ILLEGAL";

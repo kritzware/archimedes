@@ -10,6 +10,9 @@ class Lexer
 public:
   Lexer(std::string input);
   void readChar();
+  std::string readNumber();
+  std::string readIdentifier();
+  TokenType lookupIdent(std::string ident);
   void skipWhitespace();
   Token nextToken();
 };
